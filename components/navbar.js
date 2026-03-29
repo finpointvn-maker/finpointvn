@@ -12,23 +12,24 @@ import { ChevronDownIcon } from "@heroicons/react/24/solid";
 export default function Navbar(props) {
   const leftmenu = [
     {
-      label: "Home",
+      label: "Trang chủ",
       href: "/"
     },
     {
-      label: "About",
-      href: "/about"
+      label: "Bài viết",
+      href: "/archive"
     },
 
   ];
 
   const rightmenu = [
+
     {
-      label: "Archive",
-      href: "/archive"
+      label: "Về chúng tôi",
+      href: "/about"
     },
     {
-      label: "Contact",
+      label: "Liên hệ",
       href: "/contact"
     }
     // {
@@ -76,7 +77,7 @@ export default function Navbar(props) {
                   ))}
                 </div>
                 <div className="flex w-full items-center justify-between md:w-auto">
-                  <Link href="/" className="w-28 dark:hidden">
+                  <Link href="/" className="w-30 dark:hidden border-none">
                     {/* {props.logo ? (
                       <Image
                         {...urlForImage(props.logo)}
@@ -91,12 +92,13 @@ export default function Navbar(props) {
                     )} */}
 
                     <Image
-                      src={"/img/logo.png"}
-                      width={100}
+                      src={"/img/bg.png"}
+                      width={200}
                       height={40}
                       alt="Logo"
                       priority={true}
-                      sizes="(max-width: 640px) 100vw, 200px"
+                      className="border-none"
+
                     />
                   </Link>
                   <Link href="/" className="hidden w-28 dark:block">
