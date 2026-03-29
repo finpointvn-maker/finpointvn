@@ -8,6 +8,7 @@ import Image from "next/image";
 import { urlForImage } from "@/lib/sanity/image";
 import cx from "clsx";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import { francois } from "@/app/layout";
 
 export default function Navbar(props) {
   const leftmenu = [
@@ -91,7 +92,7 @@ export default function Navbar(props) {
                       </span>
                     )} */}
 
-                    <Image
+                    {/* <Image
                       src={"/img/bg.png"}
                       width={200}
                       height={40}
@@ -99,7 +100,11 @@ export default function Navbar(props) {
                       priority={true}
                       className="border-none"
 
-                    />
+                    /> */}
+                    <div className="text-center ">
+                      <p className={`text-[#223e76] font-bold text-3xl ${francois.className}`}>FinPoint</p>
+                      <p className={`text-xs text-gray-500`}>Finance for Freedom</p>
+                    </div>
                   </Link>
                   <Link href="/" className="hidden w-28 dark:block">
                     {props.logoalt ? (
@@ -141,7 +146,7 @@ export default function Navbar(props) {
 
                 <div className="order-2 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row">
                   {rightmenu.map((item, index) => (
-                    <Fragment key={`${item.label}${index}`}>
+                    <Fragment key={`${item.label} ${index}`}>
                       {item.children && item.children.length > 0 ? (
                         <DropdownMenu
                           menu={item}
