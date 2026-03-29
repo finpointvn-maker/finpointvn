@@ -9,6 +9,7 @@ import {
   EnvelopeIcon,
   PhoneIcon
 } from "@heroicons/react/24/outline";
+import { WEB_NAME } from "@/constants";
 export default function Contact({ settings }) {
   const {
     register,
@@ -55,17 +56,16 @@ export default function Contact({ settings }) {
       <div className="grid my-10 md:grid-cols-2">
         <div className="my-10">
           <h2 className="text-2xl font-semibold dark:text-white">
-            Contact Stablo
+            Contact {WEB_NAME.toUpperCase()}
           </h2>
           <p className="max-w-sm mt-5">
-            Have something to say? We are here to help. Fill up the
-            form or send email or call phone.
+            Have something to say? We are here to help. Fill up the form or send email or call phone.
           </p>
 
           <div className="mt-5">
             <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
               <MapPinIcon className="w-4 h-4" />
-              <span>1734 Sanfransico, CA 93063</span>
+              <span>Ha Noi, Viet Nam</span>
             </div>
             {settings?.email && (
               <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">

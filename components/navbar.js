@@ -8,7 +8,6 @@ import Image from "next/image";
 import { urlForImage } from "@/lib/sanity/image";
 import cx from "clsx";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
-import { myLoader } from "@/utils/all";
 
 export default function Navbar(props) {
   const leftmenu = [
@@ -67,7 +66,7 @@ export default function Navbar(props) {
                         <Link
                           href={item.href}
                           key={`${item.label}${index}`}
-                          className="px-5 py-2 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400"
+                          className="px-5 py-2 font-medium text-gray-600 hover:text-[#223e76] dark:text-gray-400 text-base"
                           target={item.external ? "_blank" : ""}
                           rel={item.external ? "noopener" : ""}>
                           {item.label}
@@ -78,7 +77,7 @@ export default function Navbar(props) {
                 </div>
                 <div className="flex w-full items-center justify-between md:w-auto">
                   <Link href="/" className="w-28 dark:hidden">
-                    {props.logo ? (
+                    {/* {props.logo ? (
                       <Image
                         {...urlForImage(props.logo)}
                         alt="Logo"
@@ -89,7 +88,16 @@ export default function Navbar(props) {
                       <span className="block text-center">
                         Stablo
                       </span>
-                    )}
+                    )} */}
+
+                    <Image
+                      src={"/img/logo.png"}
+                      width={100}
+                      height={40}
+                      alt="Logo"
+                      priority={true}
+                      sizes="(max-width: 640px) 100vw, 200px"
+                    />
                   </Link>
                   <Link href="/" className="hidden w-28 dark:block">
                     {props.logoalt ? (
@@ -101,7 +109,7 @@ export default function Navbar(props) {
                       />
                     ) : (
                       <span className="block text-center">
-                        Stablo
+                        Finpoint
                       </span>
                     )}
                   </Link>
@@ -142,7 +150,7 @@ export default function Navbar(props) {
                         <Link
                           href={item.href}
                           key={`${item.label}${index}`}
-                          className="px-5 py-2 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400"
+                          className="px-5 py-2 font-medium text-gray-600 hover:text-[#223e76] dark:text-gray-400 text-base"
                           target={item.external ? "_blank" : ""}
                           rel={item.external ? "noopener" : ""}>
                           <span> {item.label}</span>
