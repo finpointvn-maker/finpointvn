@@ -12,14 +12,14 @@ async function sharedMetaData(params) {
     title: {
       default:
         settings?.title ||
-        "Stablo - Blog Template for Next.js & Sanity CMS",
-      template: "%s | Stablo"
+        "FinPoint - Finance for Freedom",
+      template: "FinPoint - Finance for Freedom"
     },
     description:
       settings?.description ||
-      "Stablo - popular open-source next.js and sanity blog template",
-    keywords: ["Next.js", "Sanity", "Tailwind CSS"],
-    authors: [{ name: "Surjith" }],
+      "FinPoint - Finance for Freedom",
+    keywords: ["FinPoint", "Finance", "Finance for Freedom"],
+    authors: [{ name: "Nguyen Thi Hoa" }],
     canonical: settings?.url,
     openGraph: {
       images: [
@@ -33,7 +33,7 @@ async function sharedMetaData(params) {
       ]
     },
     twitter: {
-      title: settings?.title || "Stablo Template",
+      title: settings?.title || "FinPoint - Finance for Freedom",
       card: "summary_large_image"
     },
     robots: {
