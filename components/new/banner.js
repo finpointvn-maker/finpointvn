@@ -2,7 +2,7 @@ import Link from "next/link";
 import { francois } from "@/app/layout";
 
 export default function Banner() {
-   return <div className="container px-8 mx-auto xl:px-5  max-w-screen-lg py-5 lg:py-8 rounded-xl"
+   return <div className="container px-8 mx-auto xl:px-10  max-w-screen-lg py-5 lg:py-8 rounded-xl"
       style={{
          backgroundImage: "url('/img/bgbanner.jpg')",
          backgroundSize: "cover"
