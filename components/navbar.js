@@ -8,23 +8,17 @@ import Image from "next/image";
 import { urlForImage } from "@/lib/sanity/image";
 import cx from "clsx";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
-import { francois } from "@/app/layout";
+import BrandLogo from "./new/brandLogo";
 
 export default function Navbar(props) {
   const leftmenu = [
-    {
-      label: "Trang chủ",
-      href: "/"
-    },
-    {
-      label: "Bài viết",
-      href: "/archive"
-    },
-
+    // {
+    //   label: "Bài viết",
+    //   href: "/archive"
+    // },
   ];
 
   const rightmenu = [
-
     {
       label: "Về chúng tôi",
       href: "/about"
@@ -33,17 +27,6 @@ export default function Navbar(props) {
       label: "Liên hệ",
       href: "/contact"
     }
-    // {
-    //   label: "Pro Version",
-    //   href: "https://stablo-pro.web3templates.com/",
-    //   external: true,
-    //   badge: "new"
-    // },
-    // {
-    //   label: "Download",
-    //   href: "https://web3templates.com/templates/stablo-minimal-blog-website-template",
-    //   external: true
-    // }
   ];
 
   const mobilemenu = [...leftmenu, ...rightmenu];
@@ -55,71 +38,9 @@ export default function Navbar(props) {
           {({ open }) => (
             <>
               <div className="flex flex-wrap justify-between md:flex-nowrap md:gap-10">
-                <div className="order-1 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row md:justify-end">
-                  {leftmenu.map((item, index) => (
-                    <Fragment key={`${item.label}${index}`}>
-                      {item.children && item.children.length > 0 ? (
-                        <DropdownMenu
-                          menu={item}
-                          key={`${item.label}${index}`}
-                          items={item.children}
-                        />
-                      ) : (
-                        <Link
-                          href={item.href}
-                          key={`${item.label}${index}`}
-                          className="px-5 py-2 font-medium text-gray-600 hover:text-[#223e76] dark:text-gray-400 text-base"
-                          target={item.external ? "_blank" : ""}
-                          rel={item.external ? "noopener" : ""}>
-                          {item.label}
-                        </Link>
-                      )}
-                    </Fragment>
-                  ))}
-                </div>
                 <div className="flex w-full items-center justify-between md:w-auto">
-                  <Link href="/" className="w-30 dark:hidden border-none">
-                    {/* {props.logo ? (
-                      <Image
-                        {...urlForImage(props.logo)}
-                        alt="Logo"
-                        priority={true}
-                        sizes="(max-width: 640px) 100vw, 200px"
-                      />
-                    ) : (
-                      <span className="block text-center">
-                        Stablo
-                      </span>
-                    )} */}
+                  <BrandLogo />
 
-                    {/* <Image
-                      src={"/img/bg.png"}
-                      width={200}
-                      height={40}
-                      alt="Logo"
-                      priority={true}
-                      className="border-none"
-
-                    /> */}
-                    <div className="text-center ">
-                      <p className={`text-[#223e76] font-bold text-3xl ${francois.className}`}>FinPoint</p>
-                      <p className={`text-xs text-gray-500`}>Finance for Freedom</p>
-                    </div>
-                  </Link>
-                  <Link href="/" className="hidden w-28 dark:block">
-                    {props.logoalt ? (
-                      <Image
-                        {...urlForImage(props.logoalt)}
-                        alt="Logo"
-                        priority={true}
-                        sizes="(max-width: 640px) 100vw, 200px"
-                      />
-                    ) : (
-                      <span className="block text-center">
-                        Finpoint
-                      </span>
-                    )}
-                  </Link>
                   <Disclosure.Button
                     aria-label="Toggle Menu"
                     className="ml-auto rounded-md px-2 py-1 text-gray-500 focus:text-blue-500 focus:outline-none dark:text-gray-300 md:hidden ">
@@ -143,10 +64,9 @@ export default function Navbar(props) {
                     </svg>
                   </Disclosure.Button>
                 </div>
-
-                <div className="order-2 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row">
-                  {rightmenu.map((item, index) => (
-                    <Fragment key={`${item.label} ${index}`}>
+                <div className="order-1 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row md:justify-end">
+                  {mobilemenu.map((item, index) => (
+                    <Fragment key={`${item.label}${index}`}>
                       {item.children && item.children.length > 0 ? (
                         <DropdownMenu
                           menu={item}
@@ -157,21 +77,18 @@ export default function Navbar(props) {
                         <Link
                           href={item.href}
                           key={`${item.label}${index}`}
-                          className="px-5 py-2 font-medium text-gray-600 hover:text-[#223e76] dark:text-gray-400 text-base"
+                          className="px-5 py-2 font-medium text-[#223e76] hover:text-[#223e76] dark:text-gray-400 text-base"
                           target={item.external ? "_blank" : ""}
                           rel={item.external ? "noopener" : ""}>
-                          <span> {item.label}</span>
-                          {item.badge && (
-                            <span className="ml-2 rounded bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-600 dark:bg-cyan-200 dark:text-blue-800 ">
-                              {item.badge}
-                            </span>
-                          )}
+                          {item.label}
                         </Link>
                       )}
                     </Fragment>
                   ))}
                 </div>
               </div>
+
+              {/* mobile menu */}
               <Disclosure.Panel>
                 <div className="order-2 -ml-4 mt-4 flex w-full flex-col items-center justify-start md:hidden">
                   {mobilemenu.map((item, index) => (
