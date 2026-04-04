@@ -1,27 +1,19 @@
 import PostList from "@/components/postlist";
 import Pagination from "@/components/blog/pagination";
-
-import { getAllCategories, getAllCategoriesV2, getPaginatedPosts } from "@/lib/sanity/client";
-import CategoryIcon from "@/components/new/categoryIcon";
+import { getPaginatedPostsWithCategory } from "@/lib/sanity/client";
+import { POSTS_PER_PAGE } from "@/constants/constant";
 
 export default async function Post({ searchParams }) {
-  // Fetch the current page from the query parameters, defaulting to 1 if it doesn't exist
   const page = searchParams.page;
   const pageIndex = parseInt(page, 10) || 1;
 
-  // Set the number of posts to be displayed per page
-  const POSTS_PER_PAGE = 6;
-
-  // Define the parameters for fetching posts based on the current page
   const params = {
     pageIndex: (pageIndex - 1) * POSTS_PER_PAGE,
-    limit: pageIndex * POSTS_PER_PAGE
+    limit: pageIndex * POSTS_PER_PAGE,
+    slug: searchParams.category || null
   };
 
-  const posts = await getPaginatedPosts(params);
-  const categories = await getAllCategoriesV2();
-  console.log("categories", categories);
-
+  const posts = await getPaginatedPostsWithCategory(params);
 
   // Check if the current page is the first or the last
   const isFirstPage = pageIndex < 2;
@@ -36,11 +28,7 @@ export default async function Post({ searchParams }) {
           </span>
         </div>
       )}
-      <div>
-        {categories.map((cat) => (
-          <CategoryIcon category={cat} key={cat._id} />
-        ))}
-      </div>
+
       <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3">
         {posts.map(post => (
           <PostList key={post._id} post={post} aspect="square" />

@@ -14,7 +14,8 @@ import {
   catquery,
   getAll,
   searchquery,
-  fullcatpathquery
+  fullcatpathquery,
+  paginatedPostsByCatQuery
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -135,6 +136,18 @@ export async function getPaginatedPosts({ limit, pageIndex = 0 }) {
       (await client.fetch(paginatedquery, {
         pageIndex: pageIndex,
         limit: limit
+      })) || []
+    );
+  }
+  return [];
+}
+export async function getPaginatedPostsWithCategory({ slug, limit, pageIndex = 0,  }) {
+  if (client) {
+    return (
+      (await client.fetch(paginatedPostsByCatQuery, {
+        pageIndex: pageIndex,
+        limit: limit,
+        slug: slug
       })) || []
     );
   }
