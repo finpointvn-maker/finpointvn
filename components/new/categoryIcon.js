@@ -10,7 +10,8 @@ export default function CategoryIcon({ category }) {
       slug: { _type: 'slug', current: 'kien_thuc_tai_chinh' },
       title: 'KIẾN THỨC TÀI CHÍNH'
    }
-   return <div>
+   return <div className="flex rounded-lg border-1 border-[green] bg-[green]/10">
+      <span></span>
 
    </div>
 }

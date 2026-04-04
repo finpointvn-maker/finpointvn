@@ -9,6 +9,7 @@ import { urlForImage } from "@/lib/sanity/image";
 import cx from "clsx";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import BrandLogo from "./new/brandLogo";
+import { mainColor } from "@/app/constants/constant";
 
 export default function Navbar(props) {
   const leftmenu = [
@@ -77,7 +78,7 @@ export default function Navbar(props) {
                         <Link
                           href={item.href}
                           key={`${item.label}${index}`}
-                          className="px-5 py-2 font-medium text-[#223e76] hover:text-[#223e76] dark:text-gray-400 text-base"
+                          className={`px-5 py-2 font-medium text-[${mainColor}]  dark:text-gray-400 text-base`}
                           target={item.external ? "_blank" : ""}
                           rel={item.external ? "noopener" : ""}>
                           {item.label}
