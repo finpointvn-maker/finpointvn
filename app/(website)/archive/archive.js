@@ -1,7 +1,8 @@
 import PostList from "@/components/postlist";
 import Pagination from "@/components/blog/pagination";
 
-import { getPaginatedPosts } from "@/lib/sanity/client";
+import { getAllCategories, getAllCategoriesV2, getPaginatedPosts } from "@/lib/sanity/client";
+import CategoryIcon from "@/components/new/categoryIcon";
 
 export default async function Post({ searchParams }) {
   // Fetch the current page from the query parameters, defaulting to 1 if it doesn't exist
@@ -18,6 +19,9 @@ export default async function Post({ searchParams }) {
   };
 
   const posts = await getPaginatedPosts(params);
+  const categories = await getAllCategoriesV2();
+  console.log("categories", categories);
+
 
   // Check if the current page is the first or the last
   const isFirstPage = pageIndex < 2;
@@ -32,6 +36,11 @@ export default async function Post({ searchParams }) {
           </span>
         </div>
       )}
+      <div>
+        {categories.map((cat) => (
+          <CategoryIcon category={cat} key={cat._id} />
+        ))}
+      </div>
       <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3">
         {posts.map(post => (
           <PostList key={post._id} post={post} aspect="square" />

@@ -13,7 +13,8 @@ import {
   catpathquery,
   catquery,
   getAll,
-  searchquery
+  searchquery,
+  fullcatpathquery
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -102,6 +103,14 @@ export async function getAllCategories() {
   if (client) {
     const slugs = (await client.fetch(catpathquery)) || [];
     return slugs.map(slug => ({ category: slug }));
+  }
+  return [];
+}
+
+export async function getAllCategoriesV2() {
+  if (client) {
+    const categories = (await client.fetch(fullcatpathquery)) || [];
+    return categories;
   }
   return [];
 }
