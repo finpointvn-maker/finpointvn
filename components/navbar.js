@@ -4,21 +4,13 @@ import { Fragment } from "react";
 import { Menu, Transition, Disclosure } from "@headlessui/react";
 import Container from "@/components/container";
 import Link from "next/link";
-import Image from "next/image";
-import { urlForImage } from "@/lib/sanity/image";
 import cx from "clsx";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import BrandLogo from "./new/brandLogo";
 import { mainColor } from "@/constants/constant";
+import { usePathname } from "next/navigation";
 
 export default function Navbar(props) {
-  const leftmenu = [
-    // {
-    //   label: "Bài viết",
-    //   href: "/archive"
-    // },
-  ];
-
   const rightmenu = [
     {
       label: "Về chúng tôi",
@@ -29,9 +21,8 @@ export default function Navbar(props) {
       href: "/contact"
     }
   ];
-
-  const mobilemenu = [...leftmenu, ...rightmenu];
-
+  const currentPath = usePathname();
+  const mobilemenu = [...rightmenu];
   return (
     <Container>
       <nav>
@@ -78,7 +69,8 @@ export default function Navbar(props) {
                         <Link
                           href={item.href}
                           key={`${item.label}${index}`}
-                          className={`px-5 py-2 font-medium text-[${mainColor}]  text-base dark:text-gray-400`}
+                          className={`px-5 py-2 font-medium text-[${mainColor}] text-base dark:text-gray-400 
+                          ${currentPath === item.href ? "underline underline-offset-8" : ""}`}
                           target={item.external ? "_blank" : ""}
                           rel={item.external ? "noopener" : ""}>
                           {item.label}

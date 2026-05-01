@@ -5,12 +5,14 @@ import Container from "@/components/container";
 
 export default function About({ authors, settings }) {
   return (
-    <Container>
+    <>
       <HeroSection />
-      <div className="mx-auto grid w-4/5 grid-cols-2 gap-10">
-        <OverviewSection />
-        <ProfileSection />
-      </div>
-    </Container>
+      <Container>
+        <div className="mx-auto mt-2 grid grid-cols-2 gap-10">
+          <OverviewSection />
+          <ProfileSection />
+        </div>
+      </Container>
+    </>
   );
 }
