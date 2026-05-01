@@ -24,10 +24,10 @@ export default function CategoryIcon({ category, isActive }) {
   }
   return (
     <div
-      className={`relative w-1/3  cursor-pointer rounded-lg border-[2px] px-4 py-2 `}
+      className={`relative w-1/3 cursor-pointer rounded-lg border px-4 py-2`}
       style={{
-        borderColor: color,
-        backgroundColor: hover ? color + "10" : color + "25"
+        borderColor: hover ? color : "",
+        backgroundColor: hover ? color + "25" : color + "10"
       }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
