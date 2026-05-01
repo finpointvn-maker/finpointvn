@@ -13,29 +13,25 @@ export default function ProfileSection() {
   const profileData = [
     {
       icon: <AcademicCapIcon />,
-      title: "Nền tảng chuyên môn",
-      description: "Cử nhân Tài chính - Ngân hàng, Đại học Hà Nội"
+      title: "Nền tảng",
+      description:
+        "Cử nhân Tài chính - Ngân hàng trường Đại học Hà Nội"
     },
     {
       icon: <DocumentChartBarIcon />,
       title: "Chứng chỉ",
       description:
-        "Chứng chỉ hành nghề Chứng khoán - Phân tích Tài chính"
+        "Chứng chỉ Hành nghề Chứng khoán - Phân tích Tài chính"
     },
     {
       icon: <BriefcaseIcon />,
-      title: "Kinh nghiệm",
-      description: "Công ty Cổ phần Chứng khoán FPT"
-    },
-    {
-      icon: <UserIcon />,
-      title: "Hiện tại",
+      title: "Công việc hiện tại",
       description:
-        "Chuyên viên Nguồn vốn - Công ty Cổ phần Chứng khoán Asean"
+        "Chuyên viên Nguồn vốn tại Công ty Cổ phần Chứng khoán Asean"
     }
   ];
   return (
-    <div className="flex h-[350px] flex-col gap-4 rounded-lg p-8 shadow-xl">
+    <div className="flex h-[350px] flex-col justify-center gap-5 rounded-lg p-8 shadow-xl">
       {profileData.map(profile => (
         <ProfileItem
           key={profile.title}
@@ -50,7 +46,7 @@ export default function ProfileSection() {
 
 function ProfileItem({ icon, title, description }) {
   return (
-    <div className="flex justify-start gap-5 rounded-lg px-4 py-2 shadow-lg">
+    <div className="flex justify-start gap-5 rounded-lg px-4 py-4 shadow-lg">
       <div className="flex h-10 w-10 rounded-full bg-[#e8f1f8] p-2 text-[#223e76]">
         {icon}
       </div>

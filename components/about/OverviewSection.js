@@ -6,18 +6,25 @@ export default function OverviewSection() {
   return (
     <div className="flex h-[350px] flex-col justify-between rounded-lg p-8 shadow-xl">
       <div>
-        <p className="pb-5 text-xl font-bold text-[#223e76]">
-          FinPoint được xây dựng bởi ai?
+        <p className="pb-2 text-xl font-bold text-[#223e76]">
+          Người đồng hành cùng FinPoint!
         </p>
         <p>
-          FinPoint được xây dựng bởi <strong>Hoa Nguyen</strong>,
-          người quan tâm tới lĩnh vực tài chính - đầu tư, với mong
-          muốn chia sẻ kiến thức, góc nhìn phân tích doanh nghiệp và
-          các nội dung tài chính mang tính ứng dụng thực tiễn.
+          Mình là <strong>Nguyễn Thị Hoa</strong>, quan tâm tới lĩnh
+          vực <strong>tài chính – đầu tư</strong> và mình xây dựng
+          FinPoint là một nơi để chia sẻ những kiến thức, góc nhìn cá
+          nhân mà mình tích lũy được trong quá trình học hỏi và làm
+          việc.
+        </p>
+        <p>
+          Mình mong FinPoint sẽ giúp những chủ đề{" "}
+          <strong>tài chính – đầu tư</strong> trở nên{" "}
+          <strong> đúng hơn, gần hơn và thực tế hơn</strong> với nhiều
+          người hơn.
         </p>
       </div>
 
-      <div className="mt-10 flex items-center justify-between rounded-lg bg-[#e8f1f8] px-4 py-2">
+      <div className="flex items-center justify-between rounded-lg bg-[#e8f1f8] px-4 py-3">
         <div className="flex gap-2">
           <UserIcon className="w-4 text-[#223e76]" />
           <p className="font-bold">
