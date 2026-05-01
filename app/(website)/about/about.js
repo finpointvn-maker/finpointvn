@@ -13,7 +13,7 @@ export default function About({ authors, settings }) {
           <OverviewSection />
           <ProfileSection />
         </div>
-        <MissionSection />
+        {/* <MissionSection /> */}
       </Container>
     </>
   );

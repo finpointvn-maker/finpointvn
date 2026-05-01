@@ -6,15 +6,13 @@ export default function Banner() {
   return (
     <Container>
       <div
-        className="rounded-xl p-4 py-4"
+        className="h-[250px] rounded-xl p-5 py-5"
         style={{
-          backgroundImage: "url('/img/bgbanner.jpg')",
-          backgroundSize: "cover"
+          backgroundImage: "url('/img/mission-resize.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
         }}>
-        {/* <p
-        className={`text-2xl font-bold text-[#223e76] md:text-3xl ${francois.className}`}>
-        FinPoint - Finance for Freedom
-      </p> */}
         <p
           className={`pt-2 text-sm text-gray-700 md:w-1/2 md:text-base`}>
           Chúng tôi xây dựng{" "}
