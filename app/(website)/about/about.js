@@ -9,11 +9,10 @@ export default function About({ authors, settings }) {
     <>
       <HeroSection />
       <Container>
-        <div className="mx-auto mb-4 mt-2 grid grid-cols-2 gap-10">
+        <div className="mx-auto my-2 grid grid-rows-2 gap-4 lg:grid-cols-2 lg:grid-rows-none lg:gap-10">
           <OverviewSection />
           <ProfileSection />
         </div>
-        {/* <MissionSection /> */}
       </Container>
     </>
   );

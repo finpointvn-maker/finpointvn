@@ -17,7 +17,7 @@ export default async function ArchivePage({ searchParams }) {
         <Suspense
           key={searchParams.page || "1"}
           fallback={<Loading />}>
-          <div className="flex justify-between gap-5">
+          <div className="flex flex-col justify-between gap-5 lg:flex-row">
             {categories.map(cat => (
               <CategoryIcon
                 isActive={searchParams.category === cat.slug.current}

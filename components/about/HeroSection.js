@@ -9,12 +9,13 @@ export default function HeroSection() {
         alt=""
         className="absolute inset-0 h-full w-full rounded-lg"
       />
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+      <div className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center">
         <p
-          className={`text-4xl font-bold text-[#223e76] underline decoration-[#bf6008] underline-offset-[30px] `}>
+          className={`text-3xl font-bold text-[#223e76] lg:text-4xl`}>
           Finance For Freedom
         </p>
-        <p className="mt-10 text-gray-700 ">
+        <div className="mx-auto mt-5 h-[2px] w-[150px] bg-[#bf6008]"></div>
+        <p className="mt-5 text-gray-700 ">
           Kiến thức tài chính - Góc nhìn doanh nghiệp
         </p>
         <p className="text-gray-700">Quản lý tài chính cá nhân</p>

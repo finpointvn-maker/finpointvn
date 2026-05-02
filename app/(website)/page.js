@@ -6,7 +6,7 @@ export default async function IndexPage() {
   const posts = await getAllPosts();
   return <>
     <Banner />
-    <HomePage posts={posts} />;
+    <HomePage posts={posts} />
   </>
 }
 

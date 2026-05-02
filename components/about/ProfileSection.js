@@ -31,7 +31,7 @@ export default function ProfileSection() {
     }
   ];
   return (
-    <div className="flex h-[350px] flex-col justify-center gap-5 rounded-lg p-8 shadow-xl">
+    <div className="flex h-[300px] flex-col justify-center gap-6 rounded-lg p-4 shadow-xl lg:h-[350px] lg:p-8">
       {profileData.map(profile => (
         <ProfileItem
           key={profile.title}
@@ -46,13 +46,17 @@ export default function ProfileSection() {
 
 function ProfileItem({ icon, title, description }) {
   return (
-    <div className="flex justify-start gap-5 rounded-lg px-4 py-4 shadow-lg">
+    <div className="flex justify-start gap-5 rounded-lg p-2 shadow-lg lg:p-4">
       <div className="flex h-10 w-10 rounded-full bg-[#e8f1f8] p-2 text-[#223e76]">
         {icon}
       </div>
       <div>
-        {title && <p className="font-bold text-[#223e76]">{title}</p>}
-        <p className="text-sm">{description}</p>
+        {title && (
+          <p className="text-sm font-bold text-[#223e76] lg:text-base">
+            {title}
+          </p>
+        )}
+        <p className="text-xs lg:text-sm">{description}</p>
       </div>
     </div>
   );
