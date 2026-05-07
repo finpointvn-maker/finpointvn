@@ -8,7 +8,7 @@ Stablo is a JAMStack Blog template built with Next.js, Tailwind CSS & Sanity CMS
 
 **[Free Version Demo →](https://stablo.web3templates.com/)**
 
-**[Pro Version Demo →](https://stablo-pro.web3templates.com/)**
+**[Pro Version Demo →](https://www.finpoint.info.vn/)**
 
 ## Features
 
@@ -77,7 +77,6 @@ Use the Deploy Button below. It will let you deploy the starter using Vercel as 
 Alternatively, you can deploy to other services such as Netlify or Cloudflare Pages or AWS Amplify.
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/web3templates/stablo/)
-
 
 ## Step 2: Set up the project locally.
 

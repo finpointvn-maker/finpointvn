@@ -28,8 +28,18 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cx(inter.variable, lora.variable, francois.variable)}>
-      <body className="antialiased text-gray-800 dark:bg-black dark:text-gray-400">
+      className={cx(
+        inter.variable,
+        lora.variable,
+        francois.variable
+      )}>
+      <head>
+        <meta
+          name="google-site-verification"
+          content="m-mJTLa7dTIhb1K9gYCQAJyHCtYoo7Kw4gpbA47qIDk"
+        />
+      </head>
+      <body className="text-gray-800 antialiased dark:bg-black dark:text-gray-400">
         <Providers>{children}</Providers>
       </body>
     </html>
