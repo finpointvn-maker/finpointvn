@@ -8,6 +8,7 @@ import { parseISO, format } from "date-fns";
 
 import CategoryLabel from "@/components/blog/category";
 import AuthorCard from "@/components/blog/authorCard";
+import BackToTopButton from "@/components/new/backToTop";
 
 export default function Post(props) {
   const { loading, post } = props;
@@ -55,9 +56,7 @@ export default function Post(props) {
               </div>
               <div>
                 <p className="text-gray-800 dark:text-gray-400">
-                  <Link href={`/about`}>
-                    {post.author.name}
-                  </Link>
+                  <Link href={`/about`}>{post.author.name}</Link>
                 </p>
                 <div className="flex items-center space-x-2 text-sm">
                   <time
@@ -104,21 +103,7 @@ export default function Post(props) {
           {post.author && <AuthorCard author={post.author} />}
         </article>
       </Container>
+      <BackToTopButton />
     </>
   );
 }
-
-const MainImage = ({ image }) => {
-  return (
-    <div className="mb-12 mt-12 ">
-      <Image {...urlForImage(image)} alt={image.alt || "Thumbnail"} />
-      <figcaption className="text-center ">
-        {image.caption && (
-          <span className="text-sm italic text-gray-600 dark:text-gray-400">
-            {image.caption}
-          </span>
-        )}
-      </figcaption>
-    </div>
-  );
-};

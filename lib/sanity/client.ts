@@ -15,7 +15,8 @@ import {
   getAll,
   searchquery,
   fullcatpathquery,
-  paginatedPostsByCatQuery
+  paginatedPostsByCatQuery,
+  postqueryHomePage
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -50,6 +51,21 @@ export const fetcher = async ([query, params]) => {
 export async function getAllPosts() {
   if (client) {
     return (await client.fetch(postquery)) || [];
+  }
+  return [];
+}
+
+export async function getAllPostsHomePage() {
+  if (client) {
+    return (
+      (await client.fetch(
+        postqueryHomePage,
+        {},
+        {
+          cache: "no-store"
+        }
+      )) || []
+    );
   }
   return [];
 }
