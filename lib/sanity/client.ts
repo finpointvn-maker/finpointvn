@@ -110,7 +110,14 @@ export async function getAllCategories() {
 
 export async function getAllCategoriesV2() {
   if (client) {
-    const categories = (await client.fetch(fullcatpathquery)) || [];
+    const categories =
+      (await client.fetch(
+        fullcatpathquery,
+        {},
+        {
+          next: { revalidate: 60 }
+        }
+      )) || [];
     return categories;
   }
   return [];
@@ -141,7 +148,11 @@ export async function getPaginatedPosts({ limit, pageIndex = 0 }) {
   }
   return [];
 }
-export async function getPaginatedPostsWithCategory({ slug, limit, pageIndex = 0,  }) {
+export async function getPaginatedPostsWithCategory({
+  slug,
+  limit,
+  pageIndex = 0
+}) {
   if (client) {
     return (
       (await client.fetch(paginatedPostsByCatQuery, {
