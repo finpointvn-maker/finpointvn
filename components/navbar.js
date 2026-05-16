@@ -24,7 +24,7 @@ export default function Navbar(props) {
   const currentPath = usePathname();
   const mobilemenu = [...rightmenu];
   return (
-    <Container className="sticky top-0 z-[100] xl:px-60 xl:py-5 bg-white">
+    <Container className="sticky top-0 z-[100] bg-white xl:py-5">
       <nav>
         <Disclosure>
           {({ open }) => (
