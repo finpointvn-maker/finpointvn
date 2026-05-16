@@ -15,7 +15,7 @@ export default function Banner() {
         </p>
         <Link
           href="/archive"
-          className={`inline-block rounded-md bg-[#223e76] px-2 py-1 text-xs font-medium text-white hover:bg-[#223e76]/90 xl:px-4 xl:py-2 xl:text-sm`}>
+          className={`inline-block rounded-md bg-[#223e76] px-3 py-2 text-xs font-medium text-white hover:bg-[#223e76]/90 xl:px-4 xl:text-sm`}>
           Xem bài viết
         </Link>
       </div>

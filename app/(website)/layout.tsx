@@ -10,14 +10,11 @@ async function sharedMetaData(params) {
     // enable this for resolving opengraph image
     // metadataBase: new URL(settings.url),
     title: {
-      default:
-        settings?.title ||
-        "FinPoint - Finance for Freedom",
+      default: settings?.title || "FinPoint - Finance for Freedom",
       template: "FinPoint - Finance for Freedom"
     },
     description:
-      settings?.description ||
-      "FinPoint - Finance for Freedom",
+      settings?.description || "FinPoint - Finance for Freedom",
     keywords: ["FinPoint", "Finance", "Finance for Freedom"],
     authors: [{ name: "Nguyen Thi Hoa" }],
     canonical: settings?.url,
@@ -53,7 +50,7 @@ export default async function Layout({ children, params }) {
     <>
       <Navbar {...settings} />
 
-      <div>{children}</div>
+      <div className="flex-1">{children}</div>
 
       <Footer {...settings} />
     </>

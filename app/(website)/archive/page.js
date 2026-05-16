@@ -4,31 +4,27 @@ import Archive from "./archive";
 import Loading from "@/components/loading";
 import { getAllCategoriesV2 } from "@/lib/sanity/client";
 import CategoryIcon from "@/components/new/categoryIcon";
-
+import ContainerContent from "@/components/containerContent";
 
 export const runtime = "edge";
 
 export default async function ArchivePage({ searchParams }) {
   const categories = await getAllCategoriesV2();
   return (
-    <>
-      <Container className="relative">
-        <Suspense
-          key={searchParams.page || "1"}
-          fallback={<Loading />}>
-          <div className="flex flex-col justify-between gap-5 lg:flex-row">
-            {categories.map(cat => (
-              <CategoryIcon
-                isActive={searchParams.category === cat.slug.current}
-                category={cat}
-                key={cat._id}
-              />
-            ))}
-          </div>
-          <Archive searchParams={searchParams} />
-        </Suspense>
-      </Container>
-    </>
+    <ContainerContent className="relative">
+      <Suspense key={searchParams.page || "1"} fallback={<Loading />}>
+        <div className="flex flex-col justify-between gap-5 lg:flex-row">
+          {categories.map(cat => (
+            <CategoryIcon
+              isActive={searchParams.category === cat.slug.current}
+              category={cat}
+              key={cat._id}
+            />
+          ))}
+        </div>
+        <Archive searchParams={searchParams} />
+      </Suspense>
+    </ContainerContent>
   );
 }
 

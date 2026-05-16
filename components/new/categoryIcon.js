@@ -24,7 +24,7 @@ export default function CategoryIcon({ category, isActive }) {
   }
   return (
     <div
-      className={`relative h-[40px] cursor-pointer rounded-lg border px-4 py-2 lg:h-[90px] lg:w-1/3`}
+      className={`relative h-[40px] cursor-pointer rounded-lg border px-4 py-2 lg:h-[50px] lg:w-1/3`}
       style={{
         borderColor: hover ? color : "",
         backgroundColor: hover ? color + "25" : color + "10",

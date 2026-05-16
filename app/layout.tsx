@@ -39,7 +39,7 @@ export default function RootLayout({
           content="m-mJTLa7dTIhb1K9gYCQAJyHCtYoo7Kw4gpbA47qIDk"
         />
       </head>
-      <body className="text-gray-800 antialiased dark:bg-black dark:text-gray-400">
+      <body className="flex-col flex justify-between text-gray-800 antialiased dark:bg-black dark:text-gray-400 min-h-screen">
         <Providers>{children}</Providers>
       </body>
     </html>
