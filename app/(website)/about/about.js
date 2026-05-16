@@ -8,7 +8,7 @@ export default function About({ authors, settings }) {
     <>
       <HeroSection />
       <ContainerContent>
-        <div className="mx-auto my-2 grid grid-rows-2 gap-4 lg:grid-cols-2 lg:grid-rows-none lg:gap-10">
+        <div className="mx-auto grid grid-rows-2 gap-4 lg:grid-cols-2 lg:grid-rows-none lg:gap-10 xl:my-2">
           <OverviewSection />
           <ProfileSection />
         </div>
