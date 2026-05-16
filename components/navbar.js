@@ -83,7 +83,7 @@ export default function Navbar(props) {
 
               {/* mobile menu */}
               <Disclosure.Panel>
-                <div className="order-2 -ml-4 mt-4 flex w-full flex-col items-center justify-start md:hidden">
+                <div className="order-2 -ml-2 mt-4 flex w-full flex-col items-center justify-start md:hidden">
                   {mobilemenu.map((item, index) => (
                     <Fragment key={`${item.label}${index}`}>
                       {item.children && item.children.length > 0 ? (

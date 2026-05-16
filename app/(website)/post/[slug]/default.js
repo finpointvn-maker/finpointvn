@@ -9,6 +9,7 @@ import { parseISO, format } from "date-fns";
 import CategoryLabel from "@/components/blog/category";
 import AuthorCard from "@/components/blog/authorCard";
 import BackToTopButton from "@/components/new/backToTop";
+import ContainerContent from "@/components/containerContent";
 
 export default function Post(props) {
   const { loading, post } = props;
@@ -28,14 +29,14 @@ export default function Post(props) {
     : null;
 
   return (
-    <>
+    <ContainerContent>
       <Container className="!pt-0">
         <div className="mx-auto max-w-screen-md ">
           <div className="flex justify-center">
             <CategoryLabel categories={post.categories} />
           </div>
 
-          <h1 className="text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight dark:text-white lg:text-4xl lg:leading-snug">
+          <h1 className="text-brand-primary mb-3 mt-2 text-center text-xl font-semibold tracking-tight dark:text-white lg:text-4xl lg:leading-snug">
             {post.title}
           </h1>
 
@@ -55,7 +56,7 @@ export default function Post(props) {
                 )}
               </div>
               <div>
-                <p className="text-gray-800 dark:text-gray-400">
+                <p className="text-sm text-gray-800 dark:text-gray-400 xl:text-base">
                   <Link href={`/about`}>{post.author.name}</Link>
                 </p>
                 <div className="flex items-center space-x-2 text-sm">
@@ -104,6 +105,6 @@ export default function Post(props) {
         </article>
       </Container>
       <BackToTopButton />
-    </>
+    </ContainerContent>
   );
 }

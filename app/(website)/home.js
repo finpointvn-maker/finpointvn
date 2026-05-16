@@ -1,12 +1,12 @@
 import Link from "next/link";
-import Container from "@/components/container";
 import PostList from "@/components/postlist";
+import ContainerContent from "@/components/containerContent";
 
 export default function Post({ posts }) {
   return (
     <>
       {posts && (
-        <Container className="px-5">
+        <ContainerContent>
           <div className="grid gap-10 md:grid-cols-2 lg:gap-10 ">
             {posts.slice(0, 2).map(post => (
               <PostList
@@ -33,7 +33,7 @@ export default function Post({ posts }) {
               <span>Các bài viết</span>
             </Link>
           </div>
-        </Container>
+        </ContainerContent>
       )}
     </>
   );
