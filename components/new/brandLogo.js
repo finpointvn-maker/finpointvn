@@ -7,13 +7,17 @@ export default function BrandLogo() {
   return (
     <Link href="/" className="w-30 border-none dark:hidden">
       <div className="flex items-center justify-center">
-        <img src={"/img/logo.png"} width={80} alt="logo" />
-        <div className="text-center ">
+        <img
+          className="w-16 xl:w-20"
+          src={"/img/logo.png"}
+          alt="logo"
+        />
+        <div>
           <p
-            className={`text-[${mainColor}] text-3xl font-bold ${francois.className}`}>
+            className={`text-[${mainColor}] text-base font-bold xl:text-3xl ${francois.className}`}>
             FinPoint
           </p>
-          <p className={`text-xs text-gray-500`}>
+          <p className={`text-[0.6rem] text-gray-500 xl:text-xs`}>
             Finance for Freedom
           </p>
         </div>
