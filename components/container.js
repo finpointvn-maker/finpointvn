@@ -4,7 +4,7 @@ export default function Container(props) {
   return (
     <div
       className={cx(
-        "container mx-auto xl:px-60 xl:py-5 py-3",
+        "container mx-auto py-3 xl:px-32 2xl:px-60 2xl:py-5",
         "max-w-full",
         props.className
       )}>

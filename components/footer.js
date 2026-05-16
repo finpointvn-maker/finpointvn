@@ -3,19 +3,19 @@ import ThemeSwitch from "@/components/themeSwitch";
 
 export default function Footer(props) {
   return (
-    <Container className="mt-10 border-t border-gray-100 dark:border-gray-800">
-      <div className="text-center text-sm">
+    <Container className="mt-10 border-t border-gray-100 bg-[#f3f6ff] dark:border-gray-800">
+      <div className="text-center text-[0.65rem] xl:text-sm">
         Copyright © {new Date().getFullYear()} {props?.copyright}. All
         rights reserved.
-        <p className="mt-4 text-sm text-gray-700">
+        <p className="mt-2 text-[0.65rem] text-gray-700 xl:text-sm">
           Các quan điểm được chia sẻ trên FinPoint là quan điểm cá
           nhân, không đại diện cho tổ chức nơi chủ sở hữu đang công
           tác.
         </p>
       </div>
-      <div className="mt-2 flex items-center justify-end">
+      {/* <div className="flex items-center justify-end">
         <ThemeSwitch />
-      </div>
+      </div> */}
     </Container>
   );
 }
