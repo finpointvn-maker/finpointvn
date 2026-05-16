@@ -1,6 +1,4 @@
 "use client";
-
-import Container from "@/components/container";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "@web3forms/react";
@@ -9,8 +7,8 @@ import {
   EnvelopeIcon,
   PhoneIcon
 } from "@heroicons/react/24/outline";
-import { WEB_NAME } from "@/constants";
 import ContainerContent from "@/components/containerContent";
+
 export default function Contact({ settings }) {
   const {
     register,
@@ -127,7 +125,7 @@ export default function Contact({ settings }) {
                     : "border-gray-300 ring-gray-100 focus:border-gray-600 dark:border-gray-600 dark:ring-0 dark:focus:border-white"
                 }`}
                 {...register("email", {
-                  required: "Vui lòng nhập email",
+                  //required: "Vui lòng nhập email",
                   pattern: {
                     value: /^\S+@\S+$/i,
                     message: "Vui lòng nhập email đúng định dạng"
@@ -191,12 +189,12 @@ export default function Contact({ settings }) {
 
           {isSubmitSuccessful && isSuccess && (
             <div className="mt-3 text-center text-sm text-green-500">
-              {message || "Success. Message sent successfully"}
+              {"Cảm ơn bạn đã gửi góp ý cho FinPoint!"}
             </div>
           )}
           {isSubmitSuccessful && !isSuccess && (
             <div className="mt-3 text-center text-sm text-red-500">
-              {message || "Something went wrong. Please try later."}
+              {"Có lỗi xảy ra. Vui lòng thử lại sau!"}
             </div>
           )}
         </div>
