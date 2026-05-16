@@ -41,8 +41,9 @@ export default function PostList({
                   ? "aspect-[5/4]"
                   : "aspect-square"
             )}
-            href={`/post/${pathPrefix ? `${pathPrefix}/` : ""}${post.slug.current
-              }`}>
+            href={`/post/${pathPrefix ? `${pathPrefix}/` : ""}${
+              post.slug.current
+            }`}>
             {imageProps ? (
               <Image
                 src={imageProps.src}
@@ -83,8 +84,9 @@ export default function PostList({
                 "mt-2    dark:text-white"
               )}>
               <Link
-                href={`/post/${pathPrefix ? `${pathPrefix}/` : ""}${post.slug.current
-                  }`}>
+                href={`/post/${pathPrefix ? `${pathPrefix}/` : ""}${
+                  post.slug.current
+                }`}>
                 <span
                   className="bg-gradient-to-r from-[#f8c961] to-[#f8c961] bg-[length:0px_10px] bg-left-bottom
       bg-no-repeat
@@ -102,8 +104,9 @@ export default function PostList({
               {post.excerpt && (
                 <p className="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400">
                   <Link
-                    href={`/post/${pathPrefix ? `${pathPrefix}/` : ""
-                      }${post.slug.current}`}>
+                    href={`/post/${
+                      pathPrefix ? `${pathPrefix}/` : ""
+                    }${post.slug.current}`}>
                     {post.excerpt}
                   </Link>
                 </p>
