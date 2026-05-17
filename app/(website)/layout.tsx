@@ -2,6 +2,7 @@ import { getSettings } from "@/lib/sanity/client";
 import Footer from "@/components/footer";
 import { urlForImage } from "@/lib/sanity/image";
 import Navbar from "@/components/navbar";
+import SocialNetworks from "@/components/new/socialNetworks";
 
 async function sharedMetaData(params) {
   const settings = await getSettings();
@@ -51,7 +52,7 @@ export default async function Layout({ children, params }) {
       <Navbar {...settings} />
 
       <div className="flex-1">{children}</div>
-
+      {/* <SocialNetworks /> */}
       <Footer {...settings} />
     </>
   );
